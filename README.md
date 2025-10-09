@@ -49,7 +49,7 @@ If you want a fresh start, the easiest way to start over is to trash the `bashcr
 
 ## Try it online with mybinder
 
-- Follow this link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/nthiery%2Fbashcrawl/HEAD).
+- Follow this link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/slackermedia%2Fbashcrawl/HEAD).
 - Wait a few seconds to a minute until the launcher appears.
 - Click on the Terminal icon.
 
