@@ -1,22 +1,23 @@
 
-# Illusions are strong here.
-# It is difficult to tell what is a doorway and what is an object.
+# Здесь сильны иллюзии.
+# Трудно отличить дверной проём от предмета.
 #
-# The magic spell you use to look can be augmented.
+# Магическое заклинание обзора можно усилить.
 #
-# From now on, cast your spell like this:
+# Отныне произносите заклинание так:
 #
 # ls -F
 #
-# Directories (the rooms of these catacombs) end with a / symbol.
+# Директории (комнаты этих катакомб) заканчиваются символом /.
 #
-# Encounters (programs) end with a * symbol.
+# Объекты (программы) заканчиваются символом *.
 #
-# You can avoid having to type `ls -F` every time by running the
-# following:
+# Вы можете не вводить `ls -F` каждый раз, выполнив
+# следующее:
 #
 # alias ls='ls -F'
 #
-# This is known as a shell or command alias.  With this alias,
-# typing simply ls by itself will run ls -F. Try it out!
+# Это называется псевдоним (alias) команды. С этим псевдонимом
+# простой ввод ls будет запускать ls -F. Попробуйте!
 #
+

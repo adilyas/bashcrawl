@@ -1,31 +1,31 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 cat << EOF
-The old padlock features three dials, each adorned with a distinct
-symbol:
-  an amulet
-  a crown
-  a tombstone with the initials F.K. 
+На старом замке три диска, каждый украшен особым
+символом:
+  амулет
+  корона
+  надгробие с инициалами Ф.К.
 
-The dials are worn and scratched, their numbers barely visible beneath
-layers of rust and grime. The intricate symbols, though faded, hint at
-the lock's connection to ancient, enigmatic lore.
+Диски стёрты и поцарапаны, их цифры едва видны под
+слоями ржавчины и грязи. Замысловатые символы, хоть и
+выцветшие, намекают на связь замка с древними, загадочными
+знаниями.
 
 EOF
-printf "have you found the numbers? y/n  "
+printf "Вы нашли числа? y/n  "
 
 read RESP
 
@@ -33,11 +33,11 @@ if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
 
 cat << EOF
 
-The old crumbling mausoleum stands silent and imposing, its weathered
-stone facade adorned with creeping ivy and shattered stained glass
-windows. The heavy, rusted padlock on the large, ornately carved wooden
-door glints faintly in the dim light as you prepare to enter, the ancient
-numbers you've gathered poised to reveal the secrets within.
+Старый осыпающийся мавзолей стоит молчаливый и грозный, его
+обветренный каменный фасад увит плющом, а витражные окна разбиты.
+Тяжёлый ржавый замок на большой, искусно вырезанной деревянной
+двери тускло мерцает в слабом свете, пока вы готовитесь войти —
+собранные древние числа готовы раскрыть тайны внутри.
 
 EOF
 
@@ -46,15 +46,16 @@ EOF
        grep  --quiet --only-matching '7432' <<< $I; then
 
         cat << EOF
-As the padlock clatters to the ground, the mausoleum's door creaks open,
-revealing a dimly lit interior cloaked in dust and cobwebs.
+Замок падает на землю с грохотом, и дверь мавзолея со скрипом
+открывается, являя тускло освещённый интерьер, укутанный пылью
+и паутиной.
 
 EOF
         mv .mausoleum mausoleum
     else
         cat << EOF
-One or more Numbers are wrong or missing in your Inventory.
-Remember, you can check your inventory with:
+Одно или несколько чисел неверны или отсутствуют в вашем инвентаре.
+Помните, вы можете проверить инвентарь командой:
 
 echo \$I
 
@@ -64,7 +65,7 @@ EOF
 
 else
     cat << EOF
-Continue your search for the numbers on the graveyard.
+Продолжайте поиски чисел на кладбище.
 
 EOF
 
@@ -338,16 +339,326 @@ fi
 
 
 
-# Hmm, that didn't work.
-#
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Хм, это не сработало.
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./padlock
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после
+# имени этого файла, вероятно, вы
+# забыли использовать ls -F
+
 
 

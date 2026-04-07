@@ -1,15 +1,15 @@
 
-# You seem to have reached the end of this hall.
+# Похоже, вы дошли до конца этого коридора.
 #
-# Turn back and try another path.
+# Поверните назад и попробуйте другой путь.
 #
-# Remember, to back track one directory, you type:
+# Помните, чтобы вернуться на одну директорию назад, введите:
 #
 # cd ..
 #
-# If you are drawing a map of your progress,
-# you can always get the name of your working
-# directory with this command:
+# Если вы рисуете карту своего пути,
+# вы всегда можете узнать имя вашей рабочей
+# директории этой командой:
 #
 # pwd
 

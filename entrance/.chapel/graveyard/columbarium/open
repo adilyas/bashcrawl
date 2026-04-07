@@ -1,33 +1,32 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 if [ -e 15 ]; then
     cat << EOF
-You open the niche, revealing a hidden plaque with a number etched 
-into its surface. The quiet of the graveyard thickens as the number 
-**2712** emerges from the shadows.
+Вы открываете нишу, обнаруживая скрытую табличку с числом,
+выгравированным на её поверхности. Тишина кладбища сгущается,
+когда число **2712** проступает из теней.
 
-Remember the number by adding it to your inventory:
+Запомните число, добавив его в инвентарь:
 
 export I=2712,\$I
 
 EOF
 else
     cat << EOF
-You haven't touched the right niche yet.
-Please try again.
+Вы ещё не прикоснулись к нужной нише.
+Попробуйте снова.
 EOF
 fi
 
@@ -300,16 +299,325 @@ fi
 
 
 
-# Hmm, that didn't work.
-#
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Хм, это не сработало.
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./open
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после
+# имени этого файла, вероятно, вы
+# забыли использовать ls -F
+
 
 

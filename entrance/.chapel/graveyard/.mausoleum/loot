@@ -1,55 +1,55 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
-#import global functions from toplevel directory
+# импорт глобальных функций из корневой директории
 FUNCTIONS=$(pwd)
 FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
 . $FUNCTIONS
 
 cat << EOF
-As your hand hovers over the array of chests, you feel an eerie
-pull toward one in particular.
+Когда ваша рука зависает над рядом сундуков, вы чувствуете
+жуткое притяжение к одному из них.
 
 EOF
-printf "What is the number of your choice?  "
+printf "Какой номер вы выбираете?  "
 
 read RESP
 
 if [ "$RESP" -eq "27121981" ]; then
    
     cat << EOF
-As you pry it open, a soft creak reveals its contents. You find a
-trove of ancient **gold coins**, a jewel-encrusted **bracelet**
-with a large emerald, and a set of **silver keys** engraved with 
-mysterious runes. The treasures glimmer with a hint of long-
-forgotten wealth and secrets.
+Открыв его с тихим скрипом, вы обнаруживаете содержимое. Внутри —
+россыпь древних **золотых монет**, инкрустированный драгоценными
+камнями **браслет** с крупным изумрудом и набор **серебряных ключей**,
+покрытых таинственными рунами. Сокровища мерцают отблесками
+давно забытого богатства и тайн.
 
-Add the Items to your inventory with:
+Добавьте предметы в свой инвентарь командой:
 
 export I=goldcoins,bracelet,silverkeys,\$I,
 
 EOF
 else
     cat << EOF
-Ignoring the subtle warnings, you lift the lid, and in that instant,
-a deep rumble echoes through the chamber. The marble walls crack wider,
-and dust cascades from the ceiling. The room shudders violently, debris
-raining down as the ancient structure begins to collapse around you,
-triggered by an unwise choice.
+Проигнорировав тонкие предупреждения, вы поднимаете крышку, и в тот же
+миг глубокий гул разносится по залу. Мраморные стены трещат всё шире,
+пыль каскадом сыплется с потолка. Комната содрогается, обломки
+обрушиваются вниз — древнее строение начинает рушиться вокруг вас,
+приведённое в действие неверным выбором.
 
-You have been slain by the collapsed mausoleum.
+Вы погибли под обломками мавзолея.
 
 EOF
     mv ../mausoleum ../.mausoleum
@@ -326,16 +326,16 @@ fi
 
 
 
-# Hmm, that didn't work.
+# Хм, это не сработало.
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Помните, когда файлы оканчиваются на *
+# это значит, что они являются программами.
+# Попробуйте так:
 #
 # ./loot
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после
+# имени этого файла, вероятно, вы
+# забыли использовать ls -F
 
 

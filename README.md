@@ -1,81 +1,81 @@
-# Welcome!
+# Добро пожаловать!
 
-This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal.
+Это игра, которая научит вас основам работы с терминалом POSIX (Linux, BSD, UNIX).
 
-## Download and unpack
+## Скачивание и распаковка
 
-If you haven't downloaded Bashcrawl yet, go to https://gitlab.com/slackermedia/bashcrawl/-/releases and download the `Source code (zip)` file.
+Если вы ещё не скачали Bashcrawl, перейдите на https://gitlab.com/slackermedia/bashcrawl/-/releases и скачайте файл `Source code (zip)`.
 
-Once the ZIP file has been downloaded to your computer, unzip it as usual.
+После того как ZIP-файл загрузится на ваш компьютер, распакуйте его как обычно.
 
-Now it's time to try it out on your computer.
+Теперь пора попробовать его на вашем компьютере.
 
-## Try it on your computer
+## Запуск на вашем компьютере
 
-To start playing, open a terminal.
+Чтобы начать играть, откройте терминал.
 
-Type the letters `cd` (just the letters and a space, not the quote marks) into the terminal...
+Введите буквы `cd` (только буквы и пробел, без кавычек) в терминал...
 
-Then a space (press the spacebar)...
+Затем пробел (нажмите клавишу пробела)...
 
-Then drag and drop the `entrance` directory from this folder into your terminal.
+Затем перетащите директорию `entrance` из этой папки в ваш терминал.
 
-If your terminal asks you what you want to do with what you have just dragged into it, select "Paste location".
-If it doesn't ask, then expect it to paste the file path of the folder you just dragged into it.
+Если терминал спросит, что вы хотите сделать с тем, что вы только что перетащили, выберите "Вставить путь".
+Если не спросит, то ожидайте, что он вставит путь к папке, которую вы перетащили.
 
-You now have something like this in your terminal window:
+Теперь в вашем окне терминала должно быть что-то вроде этого:
 
 ```
 $ cd /home/your_username/Downloads/bashcrawl/entrance
 ```
 
-(The exact path to the entrance varies, depending on where you saved the file, so it's OK if it looks a little different on your computer.)
+(Точный путь к entrance может отличаться в зависимости от того, куда вы сохранили файл, так что ничего страшного, если на вашем компьютере он выглядит немного иначе.)
 
-Press RETURN on your keyboard.
+Нажмите RETURN на клавиатуре.
 
-Your first move is very important.
-Type this into your terminal:
+Ваш первый ход очень важен.
+Введите в терминал:
 
 ```
 cat scroll
 ```
 
-You are now playing the game.
-May the gods save you.
+Теперь вы играете в игру.
+Да хранят вас боги.
 
-## Restarting the game
+## Перезапуск игры
 
-If you want a fresh start, the easiest way to start over is to trash the `bashcrawl` folder and unzip a fresh copy.
+Если вы хотите начать заново, проще всего удалить папку `bashcrawl` и распаковать свежую копию.
 
-## Try it online with mybinder
+## Попробуйте онлайн с mybinder
 
-- Follow this link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/slackermedia%2Fbashcrawl/HEAD).
-- Wait a few seconds to a minute until the launcher appears.
-- Click on the Terminal icon.
+- Перейдите по ссылке: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/slackermedia%2Fbashcrawl/HEAD).
+- Подождите от нескольких секунд до минуты, пока не появится панель запуска.
+- Нажмите на значок Terminal.
 
-Note: mybinder sessions are temporary; the game is reinitialized each
-time you disconnect.
-[Learn more about the mybinder service](https://mybinder.readthedocs.io/en/latest/).
+Примечание: сессии mybinder временные; игра заново инициализируется при каждом
+отключении.
+[Узнайте больше о сервисе mybinder](https://mybinder.readthedocs.io/en/latest/).
 
-## NOTES FOR macOS X
+## ЗАМЕЧАНИЯ ДЛЯ macOS X
 
-It appears that there is a problem with the standard `Archive Utility` that is called from `Finder` when a zip archive is double-clicked to extract to the current folder, if you're downloading the archive from GitLab rather than using git's `clone` facility to download the game.  You may find that all of the files in the destination folder are set to be executable.  This will cause great confusion as you play the game as intended, because every plain text file will be indistiguishable from executable scripts.  Here's how to avoid this problem:
+Похоже, что существует проблема со стандартной утилитой `Archive Utility`, которая вызывается из `Finder` при двойном щелчке на zip-архиве для извлечения в текущую папку, если вы скачиваете архив с GitLab, а не используете `clone` из git для загрузки игры. Вы можете обнаружить, что все файлы в целевой папке помечены как исполняемые. Это вызовет большую путаницу при игре, потому что обычные текстовые файлы будет невозможно отличить от исполняемых скриптов. Вот как избежать этой проблемы:
 
-1.  Open your favorite terminal emulator app (for example, `Terminal.app` or `iTerm2`).
-1.  Navigate to the directory where you want to unpack the zip archive:
+1.  Откройте ваш любимый эмулятор терминала (например, `Terminal.app` или `iTerm2`).
+1.  Перейдите в директорию, куда вы хотите распаковать zip-архив:
     ```
     cd /path/to/destination
     ```
-    Replace `/path/to/destination` with the relative (does not start with slash `/`) or absolute (starts with slash `/`) path to your desired destination.
-1.  Type `unzip ` (that's `unzip` followed by a *space*)
-1.  From the `Finder`, drag the `bashcrawl-master.zip` to your terminal emulator window.  The absolute path to your downloaded archive is pasted into your terminal window, leaving you with:
+    Замените `/path/to/destination` на относительный (не начинается с `/`) или абсолютный (начинается с `/`) путь к нужному месту назначения.
+1.  Введите `unzip ` (это `unzip`, за которым следует *пробел*)
+1.  Из `Finder` перетащите `bashcrawl-master.zip` в окно вашего эмулятора терминала. Абсолютный путь к вашему скачанному архиву будет вставлен в окно терминала, и вы увидите:
     ```
     unzip /Users/your_username/Downloads/bashcrawl-master.zip
     ```
-1.  Press RETURN on your keyboard to unpack the contents of the zip archive.
-1.  In the terminal window, change directory to `bashcrawl-master/entrance`:
+1.  Нажмите RETURN на клавиатуре, чтобы распаковать содержимое zip-архива.
+1.  В окне терминала перейдите в директорию `bashcrawl-master/entrance`:
     ```
     cd bashcrawl-master/entrance
     ```
 
-Now you're in the game!  Have fun!
+Теперь вы в игре! Удачи!

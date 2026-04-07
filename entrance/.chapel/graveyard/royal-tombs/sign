@@ -1,13 +1,14 @@
-# 
-# Visitor, heed this sign:
-# 
-# Within these tombs lies magic old,
-# A spell of aid for your travail.
-# Speak the words, be brave and bold,
-# And guidance shall your path unveil.
 #
-# grep King royals 
+# Путник, внемли этому знаку:
 #
-# This spell lists only the lines that contain "King"
-# from the file "royals"
+# В этих гробницах сокрыта древняя магия,
+# Заклинание в помощь твоим странствиям.
+# Произнеси слова, будь смел и отважен,
+# И путь твой озарится подсказкой.
+#
+# grep King royals
+#
+# Это заклинание выводит только строки, содержащие "King",
+# из файла "royals"
+
 

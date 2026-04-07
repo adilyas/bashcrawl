@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 #import global functions from toplevel directory
@@ -20,81 +19,80 @@ FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
 
 penguin_bite () {
     cat << EOF
-The penguin gnaws at your Bag of Holding, hoping for a
-morsel.  Finding nothing, it takes a nip at your hand for 1
-point of damage. (let "HP=HP-1").  You may avoid this damage
-if you have a sword and wish to attack the penguin.
+Пингвин грызёт вашу Сумку Хранения в надежде на
+кусочек. Ничего не найдя, он щиплет вас за руку, нанося 1
+очко урона. (let "HP=HP-1"). Вы можете избежать этого урона,
+если у вас есть меч и вы хотите атаковать пингвина.
 
 EOF
-printf "Do you want to attack the penguin? y/n  "
+printf "Хотите атаковать пингвина? y/n  "
 	read RESP
 	if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
         cat << EOF
-You attack the penguin, quickly doing away with it with one
-quick slash.  This draws the attention of the other penguins
-in the room.  They band together and rush at you. You fight
-your best.
+Вы атакуете пингвина, быстро расправляясь с ним одним
+быстрым ударом. Это привлекает внимание других пингвинов
+в комнате. Они объединяются и бросаются на вас. Вы сражаетесь
+изо всех сил.
 
 EOF
         let HP=HP-5
         export HP
         if [ "$HP" -le 0 ]; then
             cat << EOF
-The mob of penguins reduces your hit points to zero.  You
-are slain by the mob.
+Толпа пингвинов снижает ваши очки здоровья до нуля. Вы
+погибли от нападения стаи.
 
 EOF
             gameover
             exit 1
         else
             cat << EOF
-But a mob of penguins does not tolerate oppression, and you
-soon find yourself sealed in a block of ice.  You stay,
-perfectly preserved for 128 years. When you are thawed, you
-may continue your adventure.
+Но толпа пингвинов не терпит угнетения, и вскоре
+вы оказываетесь замурованы в ледяной глыбе. Вы остаётесь
+идеально сохранённым 128 лет. Когда вас разморозят,
+вы сможете продолжить приключение.
 
 EOF
         fi
 	else
         let HP=HP--
         export HP
-	    echo "You keep things in perspective, and do not lash out at the penguin."
+	    echo "Вы сохраняете хладнокровие и не набрасываетесь на пингвина."
 	fi
 }
 
 cat << EOF
-One of the birds finally notices your presence.  It turns
-its head sideways, seemingly beckoning for you to come
-closer.
+Одна из птиц наконец замечает ваше присутствие. Она наклоняет
+голову набок, словно маня вас подойти ближе.
 
 EOF
-printf "Do you get closer? y/n  "
+printf "Подойдёте ближе? y/n  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
     cat << EOF
-You take a step forward, and the bird rushes toward you, its
-mouth open wide.
+Вы делаете шаг вперёд, и птица бросается к вам, широко
+раскрыв клюв.
 
 EOF
-    printf "Do you happen to have a fish? y/n  "
+    printf "У вас случайно есть рыба? y/n  "
     read RESP
 
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
         if grep  --quiet --only-matching fish <<< $I; then
             cat << EOF
 
-You toss the fish at the penguin,  which catches the fish
-mid-air and gobbles it down.
+Вы бросаете рыбу пингвину, который ловит её
+на лету и проглатывает целиком.
 
-Don't forget to remove the fish from your inventory.  Try
-the following command:
+Не забудьте убрать рыбу из инвентаря. Попробуйте
+следующую команду:
 
 export I=\$(sed "s/fish//; s/,,/,/" <<< \$I)
 
 EOF
         else
-            echo "You don't have a fish!"
+            echo "У вас нет рыбы!"
             echo
             penguin_bite
         fi
@@ -103,8 +101,8 @@ EOF
    fi
 else
     cat << EOF
-You back away from the penguin carefully.  It loses interest
-in you and waddles away.
+Вы осторожно отступаете от пингвина. Он теряет к вам
+интерес и ковыляет прочь.
 
 EOF
 
@@ -464,55 +462,6 @@ fi
 #
 #
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 
 #
-# Well that didn't work!
+# Хм, это не сработало!

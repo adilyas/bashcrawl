@@ -1,32 +1,32 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 cat << EOF
-You see a glowing red button with what appears to be an
-arrow pointing down inscribed on its face.
+Вы видите светящуюся красную кнопку, на которой,
+похоже, выгравирована стрелка вниз.
 
 EOF
-printf "Are you tempted to press the button?  y/n  "
+printf "Вас тянет нажать на кнопку?  y/n  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-    echo "The doors slide open, revealing a small chamber."
+    echo "Двери раздвигаются, открывая небольшую камеру."
     echo "DOWN" > ../.direction
     ln -sf .. door &> /dev/null && \
         sleep 10 && \
-        echo "The doors slide closed." && \
+        echo "Двери закрываются." && \
         unlink door &
     echo
 fi
@@ -422,13 +422,13 @@ fi
 #
 #
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Помните, когда файлы оканчиваются на *
+# это значит, что они являются программами.
+# Попробуйте так:
 #
 # ./button
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после
+# имени этого файла, вероятно, вы
+# забыли использовать ls -F
 

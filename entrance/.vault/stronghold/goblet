@@ -1,54 +1,55 @@
 #!/usr/bin/env bash
 #
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
+#
 if [[ -e orb1 && -e orb2 && -e orb3 ]]; then
     cat << EOF
-You have freed the goblet's material form.  Add 'goblet' to
-your inventory.
+Вы освободили материальную форму кубка. Добавьте 'goblet'
+в свой инвентарь.
 
 EOF
     exit
-else 
+else
     cat << EOF
-You try to grasp the faintly glowing goblet, but it passes
-through your fingers.
+Вы пытаетесь схватить тускло светящийся кубок, но он
+проходит сквозь ваши пальцы.
 
 EOF
 
 fi
 
-printf "Are you stuck? Do you need a hint? y/n  "
+printf "Вы застряли? Нужна подсказка? y/n  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
     cat << EOF
-Try searching opensource.com for hints on how to copy files.
+Попробуйте поискать на opensource.com подсказки о том,
+как копировать файлы.
 
 EOF
-    printf "Still stuck? Do you need the answer? y/n  "
+    printf "Всё ещё застряли? Нужен ответ? y/n  "
     read RESP
 
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
         cat << EOF
-The cp command copies one file to another. Run these
-commands:
+Команда cp копирует один файл в другой. Выполните
+эти команды:
 
 cp orb1 orb2
 cp orb1 orb3
 
-And then run this goblet script again for confirmation.
+А затем запустите этот скрипт кубка снова для подтверждения.
 
 EOF
     fi
@@ -327,10 +328,11 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+
+# Хм, это не сработало.
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./goblet
+
 

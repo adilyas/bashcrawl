@@ -1,35 +1,35 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 echo
 if ! grep  --quiet --only-matching coins <<< $I; then
     cat << EOF
-You have found a stash of **coins**!  They are old and worn
-with age,  but they still gleam in the magickal light
-emanating from your eyes.
+Вы нашли тайник с **монетами**! Они старые и потёртые
+от времени, но всё ещё блестят в магическом свете,
+исходящем из ваших глаз.
 
-Prefix this item to your inventory:
+Добавьте этот предмет в инвентарь:
 
 export I=coins,\$I
 
-Remember, you can check your inventory:
+Помните, вы можете проверить инвентарь:
 
 echo \$I
 
 EOF
 else
-    echo "This treasure has already been taken."
+    echo "Это сокровище уже забрано."
     echo
 fi
 
@@ -360,10 +360,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Хм, это не сработало.
+# Помните, файлы, заканчивающиеся на *,
+# являются программами.
+# Попробуйте так:
 #
 # ./treasure
 

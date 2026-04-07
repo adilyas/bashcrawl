@@ -1,33 +1,33 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
+#
 
 ITEM=crystal
 
 if ! [ -f .bless ] ; then
-    printf "Do you have an ice crystal? y/n  "
+    printf "У вас есть ледяной кристалл? y/n  "
     read RESP
 
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
         if grep  --quiet --only-matching "$ITEM" <<< "$I" ; then
             cat << EOF
-You place the ice crystal among the shards of glass.  The
-sword in your hands becomes cold.  You feel the power of
-1000 blizzards coursing through it.
+Вы помещаете ледяной кристалл среди осколков стекла.
+Меч в ваших руках становится холодным. Вы чувствуете
+силу 1000 метелей, проходящую сквозь него.
 
-Don't forget to remove the crystal from your inventory.  Try
-the following command:
+Не забудьте убрать кристалл из инвентаря. Попробуйте
+следующую команду:
 
 export I=\$(sed 's/$ITEM,//' <<< \$I)
 EOF
@@ -35,22 +35,22 @@ EOF
             exit 0
         else
             cat << EOF
-You search in your inventory but find nothing that seems like
-a crystal
+Вы ищете в инвентаре, но не находите ничего
+похожего на кристалл
 
 EOF
         fi
     fi
     cat << EOF
-You sense that the glass shards are searching for something.
-Whatever it is, you cannot provide it now.
+Вы чувствуете, что осколки стекла что-то ищут.
+Что бы это ни было, сейчас вы не можете это дать.
 
-Walk with care.
+Ступайте осторожно.
 
 EOF
 else
     cat << EOF
-You already placed the ice crystal among the shards of glass
+Вы уже поместили ледяной кристалл среди осколков стекла
 
 EOF
 fi
@@ -328,11 +328,10 @@ fi
 
 
 
-# Hmm, that didn't work.
 
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# Хм, это не сработало.
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./glass
 

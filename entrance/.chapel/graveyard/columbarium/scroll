@@ -1,19 +1,20 @@
-# Before you is the columbarium, a weathered stone structure
-# adorned with carvings of angels and vines. Rows of niches
-# line its walls, some with long burnt-out candles, others
-# with worn inscriptions and small tokens of remembrance.
+# Перед вами колумбарий — обветренное каменное строение,
+# украшенное резьбой ангелов и лоз. Ряды ниш
+# выстраивают его стены — в некоторых давно потухшие свечи,
+# в других — стёртые надписи и маленькие знаки памяти.
 #
-# Many have distinctive symbols on their front. Maybe you 
-# can find one that is helpful.
+# На многих нишах есть отличительные символы. Может быть,
+# вы найдёте тот, что поможет.
 #
-# If you think you have found the right niche, you can touch
-# it with the following command:
-# 
-# touch <number of niche>
+# Если вы думаете, что нашли нужную нишу, вы можете
+# прикоснуться к ней следующей командой:
 #
-# This creates an empty file in the current room (directory).
-# After you have created the file, try to "open" the niche.
+# touch <номер ниши>
 #
-# If you know a spell that helps you search, you can make it easier
-# for yourself.
+# Это создаст пустой файл в текущей комнате (директории).
+# После создания файла попробуйте «открыть» нишу.
+#
+# Если вы знаете заклинание, помогающее искать, можете
+# упростить себе задачу.
+
 

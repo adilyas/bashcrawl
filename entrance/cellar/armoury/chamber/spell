@@ -1,56 +1,56 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 if ! [ -L portal ]; then
     cat << EOF
-Runes, the language of the ancient mystics that once ruled
-this land, are inscribed upon the western wall.
+На западной стене высечены руны — язык древних мистиков,
+некогда правивших этой землёй.
 
 EOF
-    printf "Do you want to read them? y/n  "
+    printf "Хотите их прочитать? y/n  "
     read RESP
 
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
         cat << EOF
-You recall the lessons of Caitlyn the Green, who taught you
-these ancient letters.
+Вы вспоминаете уроки Кейтлин Зелёной, которая научила вас
+этим древним письменам.
 
-The runes are instructions on how to summon a portal that
-will allow you to walk through an invisible door contained
-in the wall.
+Руны содержат инструкцию, как вызвать портал, который
+позволит вам пройти через невидимую дверь, скрытую
+в стене.
 
-In Bash, a symbolic link (symlink) is a *shortcut* to
-another file or directory.  Create one from this room to the
-adjacent one:
+В Bash символическая ссылка (symlink) — это *ярлык* на
+другой файл или директорию. Создайте её из этой комнаты
+в соседнюю:
 
 ln -fs ../../../chapel/courtyard/aviary/hall portal
 
 EOF
     else
         cat << EOF
-You decide it is probably best to leave magickal
-inscriptions as they are.
+Вы решаете, что магические надписи лучше
+оставить как есть.
 
 EOF
     fi
 else
     cat << EOF
-The invoked portal is still there, wide open as it has been
-since its first appearance.
+Вызванный портал всё ещё здесь, широко открытый, каким он был
+с момента своего появления.
 
-You can go through it just like any other door :
+Вы можете пройти через него, как через любую другую дверь:
 
 cd portal
 
@@ -370,10 +370,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Хм, это не сработало.
+# Помните, файлы, заканчивающиеся на *,
+# являются программами.
+# Попробуйте так:
 #
 # ./spell
 

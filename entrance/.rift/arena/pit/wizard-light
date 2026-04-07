@@ -1,27 +1,28 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 if [ -e wizard-dark ]; then
     cat << EOF
-The ancient wizard, Arnnisen the Gray, takes form before
-your very eyes. You have freed him, and now he fights by
-your side against the crawling chaos!
+Древний волшебник Арннисен Серый обретает форму перед
+вашими глазами. Вы освободили его, и теперь он сражается
+на вашей стороне против ползучего хаоса!
 
 EOF
 else
     cat << EOF
-You feel a presence.  It's probably just your imagination.
+Вы чувствуете чьё-то присутствие. Наверное, просто
+воображение.
 
 EOF
 fi
@@ -299,15 +300,16 @@ fi
 
 
 
-# Hmm, that didn't work.
+
+# Хм, это не сработало.
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./wizard-light
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после имени
+# этого файла, вы, вероятно,
+# забываете использовать ls -F
+
 

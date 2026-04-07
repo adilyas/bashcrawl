@@ -1,24 +1,23 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 damage() {
     cat << EOF
-You try to resist, but you cannot.  You dip your hand into
-the fountain,  and you feel your skin burning.  The pain
-snaps you out of your trance and you only suffer -2 HP.
+Вы пытаетесь сопротивляться, но не можете. Вы опускаете руку
+в фонтан и чувствуете, как кожа обжигается. Боль выводит
+вас из транса, и вы теряете лишь -2 HP.
 
-Remember to deduct 2 points from your HP variable:
+Не забудьте вычесть 2 очка из переменной HP:
 
 let "HP=HP-2"
 
@@ -28,19 +27,19 @@ EOF
 
 CURSE=`find .. -type f -name ".curse"`
 
-printf "Do you want to approach the fountain? y/n  "
+printf "Хотите подойти к фонтану? y/n  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
     cat << EOF
-The waters sparkle in the light of your gaze.  You feel
-drawn to it.
+Воды сверкают в свете вашего взгляда. Вы чувствуете,
+что вас тянет к ним.
 
 EOF
     if [ x$CURSE = "x" ]; then
         cat << EOF
-But you suddenly feel strength to turn away.  You hear a
-sigh from the altar in the chapel.
+Но вдруг вы чувствуете силу отвернуться. Вы слышите
+вздох от алтаря в часовне.
 
 EOF
    else
@@ -53,7 +52,6 @@ else
 fi
 
 [ -f ../.curse ] && rm ../.curse
-#
 #
 #
 #
@@ -455,8 +453,6 @@ fi
 #
 #
 #
-#
-#
 
 #
-# Well that didn't work!
+# Хм, это не сработало!

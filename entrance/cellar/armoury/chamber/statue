@@ -1,62 +1,62 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
-#import global functions from toplevel directory
+# импортируем глобальные функции из корневой директории
 FUNCTIONS=$(pwd)
 FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
 . $FUNCTIONS
 
-# this runs after the statue has been "destroyed"
-# and this file has been renamed to 'pieces'
+# это выполняется после того, как статуя была «уничтожена»
+# и этот файл был переименован в 'pieces'
 if [ "$0" = "./pieces" ]; then
     cat << EOF
-You sift through the pieces of a shattered statue.
+Вы перебираете обломки разбитой статуи.
 
-You find nothing of interest in the statue's remains.
+Вы не находите ничего интересного в останках статуи.
 
 EOF
     exit 1
 fi
 
-# start the statue encounter
+# начинаем встречу со статуей
 cat << EOF
-A rugged statue stands in the corner of the room.
+Грубая статуя стоит в углу комнаты.
 
 EOF
-printf "Do you approach it? y/n  "
+printf "Подойти к ней? y/n  "
 
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
     cat << EOF
-The statue springs to life, rumbling:
+Статуя оживает и грохочет:
 
-WHO DARES INTRUDE UPON THE CHAMBER OF SPIRITS?
+КТО ПОСМЕЛ ВТОРГНУТЬСЯ В ПАЛАТУ ДУХОВ?
 
-It thrusts a fist at you, hitting you for 5 damage.
+Она бьёт вас кулаком, нанося 5 единиц урона.
 
 EOF
 
-    # this does not change the user's HP,
-    # it only calculates it after damage
+    # это не меняет HP пользователя,
+    # а только вычисляет его после урона
     let "HP=HP-5"
     if [ "$HP" -le 0 ]; then
         cat << EOF
-You have been slain by the statue.
+Статуя убила вас.
 
-GAME OVER!
+КОНЕЦ ИГРЫ!
 
 EOF
         gameover
@@ -64,15 +64,15 @@ EOF
     fi
 
     perl -pe 's/coins/diamonds/' -i ./treasure
-    printf "Do you have a sword? y/n  "
+    printf "У вас есть меч? y/n  "
     read RESP
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
        if grep  --quiet --only-matching 'sword' <<< $I; then
            cat <<EOF
-You strike the statue and it breaks to pieces!
+Вы ударяете статую, и она разбивается на куски!
 
-However, you have taken damage.
-Deduct 5 from your HP variable:
+Однако вы получили урон.
+Вычтите 5 из переменной HP:
 
 let "HP=HP-5"
 
@@ -80,9 +80,9 @@ EOF
            mv statue pieces
        else
            cat << EOF
-No you don't!  Run!
-You have taken damage from the animated statue.
-Deduct 5 from your HP variable:
+Нет, у вас его нет! Бегите!
+Вы получили урон от ожившей статуи.
+Вычтите 5 из переменной HP:
 
 let "HP=HP-5"
 
@@ -92,9 +92,9 @@ EOF
       fi
     else
         cat <<EOF
-Run!
-You have taken damage from the animated statue.
-Deduct 5 from your HP variable:
+Бегите!
+Вы получили урон от ожившей статуи.
+Вычтите 5 из переменной HP:
 
 let "HP=HP-5"
 
@@ -102,8 +102,8 @@ EOF
    fi
 else
     cat << EOF
-You cautiously avoid the statue, recalling stories of living
-stone lying in wait, deep within haunted catacombs.
+Вы осторожно обходите статую, вспоминая рассказы о живых
+камнях, подстерегающих путников в глубинах проклятых катакомб.
 
 EOF
 
@@ -409,10 +409,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Хм, это не сработало.
+# Помните, файлы, заканчивающиеся на *,
+# являются программами.
+# Попробуйте так:
 #
 # ./statue
 

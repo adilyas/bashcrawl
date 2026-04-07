@@ -1,35 +1,34 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 ITEM=crystal
 
 if ! grep --quiet "$ITEM" <<<"$I" ; then
     cat << EOF
-A white crystal, forged by the Queen of Winter, on the
-frosty ground.
+Белый кристалл, выкованный Королевой Зимы, лежит
+на морозной земле.
 
-You can prefix this item to your inventory:
+Вы можете добавить этот предмет в инвентарь:
 
 I=$ITEM,\$I
 
-Remember, you can check your inventory:
+Помните, вы можете проверить инвентарь:
 
 echo \$I
 
 EOF
 else
-    echo "The crystal has already been taken"
+    echo "Кристалл уже забран"
 fi
 #
 #
@@ -383,58 +382,6 @@ fi
 #
 #
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 
 #
-# Well that didn't work!
+# Хм, это не сработало!

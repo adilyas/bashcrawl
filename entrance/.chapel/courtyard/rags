@@ -1,46 +1,46 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 ITEMS=("rags" "fish")
 
 if ! grep --quiet "${ITEMS[0]}" <<< "$I" ; then
     cat << EOF
-There's a pile of old **rags**.  They are old and worn with
-age, and probably fell off of some poor adventurer.
+На полу куча старых **тряпок**. Они ветхие и изношенные
+от времени, и, вероятно, остались от какого-то бедного
+искателя приключений.
 
 EOF
-    printf "Do you want to take the rags? y/n  "
+    printf "Хотите взять тряпки? y/n  "
 
     read RESP
 
     if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
         cat << EOF
-As you take the rags from the floor, you find a salted fish,
-probably from the rations of the former owner of these rags.
-Prefix these items to your inventory:
+Поднимая тряпки с пола, вы находите солёную рыбу —
+вероятно, из запасов бывшего владельца этих тряпок.
+Добавьте эти предметы в инвентарь:
 
 export I=$(IFS=, ; echo "${ITEMS[*]}"),\$I
 
-Remember, you can check your inventory
+Помните, вы можете проверить инвентарь:
 
 echo \$I
 
 EOF
     fi
 else
-    echo "The rags have already been taken"
+    echo "Тряпки уже забраны"
 fi
 #
 #
@@ -395,57 +395,6 @@ fi
 #
 #
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 
 #
-# Well that didn't work!
+# Хм, это не сработало!

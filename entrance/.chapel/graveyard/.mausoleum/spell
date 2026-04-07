@@ -1,16 +1,17 @@
-# As you hastily scan the room, your gaze falls upon a tattered,
-# ancient scroll partially protruding from beneath a crumbled
-# chest. Ignoring the other trinkets, you pull it free, revealing
-# faded runes scratched onto the fragile parchment. Unfurling the
-# scroll, you recognize it as a spell of aid:
-# 
-# In decayed rooms where shadows stay,
-# 'uniq' will charm the clones away.
+# Торопливо осматривая комнату, ваш взгляд падает на потрёпанный
+# древний свиток, частично торчащий из-под рассыпавшегося
+# сундука. Не обращая внимания на другие безделушки, вы вытаскиваете
+# его, обнаруживая выцветшие руны, нацарапанные на хрупком пергаменте.
+# Развернув свиток, вы узнаёте в нём заклинание помощи:
 #
-# You can combine spells (commands) with a pipe (|) character.
-# The "uniq" command omits repeated lines.
-# Sort the room, and then pipe its output
-# to "uniq" for a short list. Try the incantation:
+# В обветшалых залах, где тени спят,
+# 'uniq' прогонит двойников назад.
+#
+# Вы можете комбинировать заклинания (команды) с помощью символа | (pipe).
+# Команда "uniq" убирает повторяющиеся строки.
+# Отсортируйте комнату, а затем передайте вывод
+# в "uniq" для короткого списка. Попробуйте заклинание:
 #
 # sort room | uniq
+
 

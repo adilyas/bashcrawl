@@ -1,20 +1,22 @@
 
-You enter a room that has been magickally frost-bitten.
+Вы входите в комнату, покрытую магическим инеем.
 
-Snow and frost covers the ground, an icy pond leading perhaps
-to an underground lake or to the outside, is in the far corner.
+Снег и иней покрывают пол, а ледяной пруд в дальнем
+углу, возможно, ведёт к подземному озеру или наружу.
 
-A few small black and white birds waddle around the room,
-taking no notice of you.
+Несколько маленьких чёрно-белых птиц переваливаются
+по комнате, не обращая на вас внимания.
 
-Tip:
-You can make your shell autocomplete the names of files and
-directories by pressing the Tab key after typing the first
-few letters.
+Совет:
+Вы можете заставить оболочку автоматически дополнять
+имена файлов и директорий, нажав клавишу Tab после
+ввода первых нескольких букв.
 
-When you move to the next room, try typing
+Когда будете переходить в следующую комнату, попробуйте
+набрать
 
 cd h
 
-and then press TAB.
+и затем нажмите TAB.
+
 

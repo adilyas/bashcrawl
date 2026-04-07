@@ -1,38 +1,38 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
-# check if we found that bottle already ...
+# проверяем, находили ли мы уже эту бутылку ...
 if [[ -v HP ]] ; then
   cat <<EOF
-You checked that bottle already. 
+Вы уже проверяли эту бутылку.
 EOF
 else
-# let's investigate the bottle...
+# давайте исследуем бутылку...
 cat << EOF
-You have found a potion bottle of swirling
-green liquid. Do you want to drink it?  y/n
+Вы нашли бутылку с зельем, в которой клубится
+зелёная жидкость. Хотите её выпить?  y/n
 
 EOF
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
    cat << EOF
-The taste of a rustic green plant fills your mouth.  It
-warms and strengthens you.
+Вкус терпкого зелёного растения наполняет ваш рот. Оно
+согревает и укрепляет вас.
 
-Create a variable for your health points (HP).  You have
+Создайте переменную для очков здоровья (HP). У вас
 15HP:
 
 export HP=15
@@ -40,10 +40,10 @@ export HP=15
 EOF
 else
     cat << EOF
-You weren't born yestermorn.  This potion is probably
-poison.
+Вы не вчера родились. Это зелье, вероятно,
+отрава.
 
-Create a variable for your health points (HP).  You have
+Создайте переменную для очков здоровья (HP). У вас
 10HP:
 
 export HP=10
@@ -53,7 +53,7 @@ EOF
 fi
 
 cat << EOF
-You can check your health at any time:
+Вы можете проверить здоровье в любое время:
 
 echo \$HP
 
@@ -337,10 +337,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Хм, это не сработало.
+# Помните, файлы, заканчивающиеся на *,
+# являются программами.
+# Попробуйте так:
 #
 # ./potion
 

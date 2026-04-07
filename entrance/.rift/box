@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 cat << EOF
-A metal box sits upon the ground.  It appears to be
-illuminated from within.  There is a window in the box. The
-window is black, but there is luminescent writing.
+На земле стоит металлический ящик. Кажется, что он
+светится изнутри. В ящике есть окошко. Окошко чёрное,
+но на нём видна светящаяся надпись.
 
 EOF
-printf "Do you want to read the writing? y/n  "
+printf "Хотите прочитать надпись? y/n  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
@@ -35,11 +35,11 @@ EOF
        cat << EOF > armour
 #!/usr/bin/env bash
 cat << eof
-Welcome, ${USER}, to your POSIX system.  You have learnt much,
-and now you have the basic knowledge you need to become a
-truly powerful wizard.
+Добро пожаловать, ${USER}, в вашу систему POSIX. Вы многому
+научились, и теперь у вас есть базовые знания, чтобы стать
+по-настоящему могущественным волшебником.
 
-You have found magickal armour.  Add it to your inventory.
+Вы нашли магические доспехи. Добавьте их в инвентарь.
 
 eof
 touch .armour
@@ -47,12 +47,12 @@ touch .bless
 
 EOF
         chmod +x armour
-        echo "You feel magic in the air."
+        echo "Вы чувствуете магию в воздухе."
    fi
 else
     cat << EOF
-The box is full of mystery, and it's often best not to look
-too deeply into puzzles.
+Ящик полон тайн, и часто лучше не вглядываться
+слишком глубоко в загадки.
 
 EOF
 fi
@@ -330,15 +330,16 @@ fi
 
 
 
-# Hmm, that didn't work.
+
+# Хм, это не сработало.
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./box
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после имени
+# этого файла, вы, вероятно,
+# забываете использовать ls -F
+
 

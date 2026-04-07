@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 #import global functions from toplevel directory
@@ -19,7 +18,7 @@ FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
 . $FUNCTIONS
 
 roll() {
-    printf "Enter a number:  "
+    printf "Введите число:  "
     read NUM
     ALPHA=$RANDOM
     OMEGA=$RANDOM
@@ -29,24 +28,24 @@ roll() {
     MONSTER=$RANDOM
     MONSTER=`echo $MONSTER | cut -b 1-2`
     NUM=`echo $NUM | cut -b 1-2`
-    echo "The monster rolled " $MONSTER
-    echo "You rolled " $NUM
+    echo "Монстр выбросил " $MONSTER
+    echo "Вы выбросили " $NUM
     resolve
 }
 
 resolve() {
     if ! grep  --quiet --only-matching 'sword' <<< $I; then
         cat << EOF
-You do not have a sword!
+У вас нет меча!
 
-Your attacks will be less effective.
+Ваши атаки будут менее эффективными.
 
 EOF
         let NUM=NUM-10
     fi
     if [[ $MONSTER -eq $NUM ]]; then
         cat << EOF
-You each parry one another's attacks.  Roll again...
+Вы парируете атаки друг друга. Бросайте снова...
 
 EOF
 	roll
@@ -54,19 +53,19 @@ EOF
 
     if [[ $MONSTER -lt $NUM ]]; then
         cat << EOF
-A hit! A palpable hit!  You have slain the beast.
+Попадание! Ощутимый удар! Вы сразили зверя.
 
 EOF
         cat << EOF > treasure
 #!/usr/bin/env bash
 if ! grep  --quiet --only-matching crown <<< \$I; then
     cat << eof
-You have found a **crown**!  Add it to your inventory.
+Вы нашли **корону**! Добавьте её в инвентарь.
 
 eof
 
 else
-    echo "This treasure has already been taken."
+    echo "Это сокровище уже забрано."
 fi
 
 EOF
@@ -75,8 +74,8 @@ EOF
     else
         cat << EOF
 
-Your attack is deflected off the monster's leathery flesh.
-You take 5 points damage. Deduct this from your HP.
+Ваша атака отскакивает от кожистой плоти монстра.
+Вы получаете 5 очков урона. Вычтите это из HP.
 
 let HP=HP-5
 
@@ -85,9 +84,9 @@ EOF
         export HP
         if [ "$HP" -le 0 ]; then
             cat << EOF
-You have been slain by the monster.
+Вы были убиты монстром.
 
-GAME OVER!
+КОНЕЦ ИГРЫ!
 
 EOF
             gameover
@@ -99,34 +98,33 @@ EOF
 
 if [ "$0" = "./carcass" ]; then
     cat << EOF
-You find the carcass of a foul beast.  Nothing of interest
-lies within its remains.
+Вы находите тушу мерзкого зверя. В его останках нет
+ничего интересного.
 
 EOF
     exit 0
 fi
 
 cat << EOF
-A hulking three-legged beast, with a mouth full of fangs and
-a barbed tail and 8 arms, lumbers toward you.
+Громадный трёхногий зверь с пастью, полной клыков,
+шипастым хвостом и 8 руками, надвигается на вас.
 
-If you have a sword, you can attack.  Otherwise, you should
-run.
+Если у вас есть меч, вы можете атаковать. Иначе лучше
+бежать.
 
 EOF
-printf "Do you want to attack? y/n  "
+printf "Хотите атаковать? y/n  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
     roll
 else
     cat << EOF
-You wisely turn and flee.  Quickly cd to the previous
-directory.
+Вы мудро разворачиваетесь и бежите. Скорее
+перейдите в предыдущую директорию с помощью cd.
 
 EOF
 fi
-#
 #
 #
 #
@@ -479,57 +477,6 @@ fi
 #
 #
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 
 #
-# Well that didn't work!
+# Хм, это не сработало!

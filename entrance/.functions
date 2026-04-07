@@ -1,45 +1,45 @@
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
+#
 
-# This is a custom function.
-# A function is a snippet of code that you can use in other files.
-# Whenever you see the `gameover`command in a file of this
-# dungeon, that's a "call" to this function.
+# Это пользовательская функция.
+# Функция — это фрагмент кода, который можно использовать в других файлах.
+# Каждый раз, когда вы видите команду `gameover` в файле этого
+# подземелья, это «вызов» этой функции.
 gameover () {
     CORPSE=$(mktemp corpse.XXX)
     cat << EOF2 > $CORPSE
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
+#
 CORPSE=\$(basename \$0)
 
 echo
 if [ ! -e .\$CORPSE.looted ]; then
     cat << EOF
-You see the corpse of a slain adventurer on the floor of the
-dungeon.  You find the following items on the corpse:  
+Вы видите труп убитого искателя приключений на полу
+подземелья.  На трупе вы находите следующие предметы:
 
 ${I}
 
@@ -47,7 +47,7 @@ EOF
 
     touch .\$CORPSE.looted
 else
-    echo "This corpse has already been looted."
+    echo "Этот труп уже обыскан."
     echo
 fi
 EOF2
@@ -57,10 +57,10 @@ EOF2
     done
 
     cat << EOF2 >> $CORPSE
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# Хм, это не сработало.
+# Помните, когда файлы оканчиваются на *
+# это значит, что они являются программами.
+# Попробуйте так:
 #
 # ./$CORPSE
 

@@ -1,37 +1,37 @@
-This is the notebook of Thraal, Artificer of the Kingdom of
-Nor.  I have been studying the machines that lie in this
-Satellite.  I have a way to combine the parts to form a
-golem, a *robot*, using the same incantation that I use to
-view signs and scrolls in my home world.  I have discovered
-that in order to bring the robot to life I must utter the
-following spell:
+Это записная книжка Траала, Мастера-Изобретателя
+Королевства Нор. Я изучал механизмы, которые находятся
+на этом Спутнике. Я нашёл способ соединить детали, чтобы
+создать голема, *робота*, используя то же заклинание,
+которым я просматриваю таблички и свитки в моём родном мире.
+Я обнаружил, что для оживления робота нужно произнести
+следующее заклинание:
 
     chmod +x robot
 
-I have labeled the four parts alpha, beta, gamma, delta,
-but that is not the order I must combine them.  I must
-pass the combined parts into another spell which I will
-document below.  The first incantation I tried was thus:
+Я пометил четыре части: alpha, beta, gamma, delta,
+но это не тот порядок, в котором их нужно соединять. Я должен
+передать соединённые части в другое заклинание, которое
+опишу ниже. Первое заклинание, которое я попробовал:
 
     cat alpha beta gamma delta | base64 -d > robot
 
-...but that was met with the following error:
+...но оно привело к следующей ошибке:
 
     base64:  invalid input
 
-I have noticed that not every order thus will produce
-the same error, but the resulting robot still does not
-work.  I discovered another incantation that will tell
-me the robot is assembled correctly:
+Я заметил, что не каждый порядок даёт ту же ошибку,
+но получившийся робот всё равно не работает. Я нашёл
+ещё одно заклинание, которое скажет мне, правильно ли
+собран робот:
 
     sha256sum -c sha256sums
 
-I will attempt every combination and document the one
-that succeeds.
+Я попробую все комбинации и запишу ту,
+что сработает.
 
     alpha beta delta gamma
     alpha delta bet
 
-There appears to be dried blood on the notebook, and the
-rest of the pages are blank.
+На записной книжке видна засохшая кровь,
+а остальные страницы пусты.
 

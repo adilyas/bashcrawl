@@ -1,32 +1,32 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 ITEM=sword
 
 if ! grep --quiet "$ITEM" <<< "$I" ; then
     cat << EOF
-You have found a gleaming silver **sword**!  You marvel at
-its craftsmanship, and you recall tales from your childhood
-of the great mystic king Rannismir who bore such a sword to
-protect the kingdom from the undead.
+Вы нашли сверкающий серебряный **меч**! Вы восхищаетесь
+его мастерством изготовления и вспоминаете детские рассказы
+о великом мистическом короле Раннисмире, который носил такой меч,
+чтобы защитить королевство от нежити.
 
-Add this item to your inventory:
+Добавьте этот предмет в инвентарь:
 
 export I=$ITEM,\$I
 
-Remember, you can check your inventory:
+Помните, вы можете проверить инвентарь:
 
 echo \$I
 
@@ -35,7 +35,7 @@ EOF
     mv ../../.vault ../../vault 2>/dev/null
     mv ../../.scrap ../../scrap 2>/dev/null
 else
-    echo "This treasure has already been taken."
+    echo "Это сокровище уже забрано."
 fi
 
 
@@ -318,7 +318,7 @@ fi
 
 
 
-# Hmm, that didn't work!
+# Хм, это не сработало!
 #
-# Maybe the scroll can provide a clue.
+# Возможно, свиток даст подсказку.
 

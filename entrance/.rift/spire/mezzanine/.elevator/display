@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 floors=666
@@ -62,31 +62,31 @@ countup () {
 
 if grep --quiet UP .direction; then
     cat << EOF
-You hear a slight whirring, and feel a heaviness at your
-feet, with a vague, disquieting sense of motion.
+Вы слышите лёгкое жужжание и чувствуете тяжесть
+в ногах, с неясным, тревожным ощущением движения.
 
-A magickal display reads:
+Магический дисплей показывает:
 
 EOF
     countup
     cat << EOF
 
-The doors slide open, with nothing but darkness beyond.
+Двери раздвигаются, а за ними — лишь тьма.
 
 EOF
     echo "DOWN" > .direction
     ln -sf .satellite door && \
         sleep 10 && \
-        echo "The doors slide closed." && \
+        echo "Двери закрываются." && \
         rm door &> /dev/null && \
     echo "DOWN" > .direction &
     echo
 else
     cat << EOF
-You hear a slight whirring, and feel a lightness at your
-feet, with a vague, disquieting sense of motion.
+Вы слышите лёгкое жужжание и чувствуете лёгкость
+в ногах, с неясным, тревожным ощущением движения.
 
-A magickal display reads:
+Магический дисплей показывает:
 
 EOF
     countdown
@@ -94,12 +94,12 @@ EOF
     echo
     echo "UP" > .direction &
     cat << EOF
-The doors slide open, with nothing but darkness beyond.
+Двери раздвигаются, а за ними — лишь тьма.
 
 EOF
     ln -sf .. door && \
         sleep 10 && \
-        echo "The doors slide closed." && \
+        echo "Двери закрываются." && \
         rm door &> /dev/null &
     echo
 fi
@@ -495,13 +495,13 @@ fi
 #
 #
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Хм, это не сработало.
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./display
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после имени
+# этого файла, вы, вероятно,
+# забываете использовать ls -F
 

@@ -1,29 +1,29 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-#                    Congratulations!
+#                    Поздравляем!
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 if ! grep  --only-matching amulet <<< $I &> /dev/null; then
     cat << EOF
-You have found an emerald **amulet**!
+Вы нашли изумрудный **амулет**!
 
-To collect treasure, you must have a variable to hold your inventory.
+Чтобы собирать сокровища, вам нужна переменная для хранения инвентаря.
 
-Create a variable and add your treasure to it like this:
+Создайте переменную и добавьте в неё сокровище вот так:
 
 export I=amulet,\$I
 
-You can always check your wealth with this command:
+Проверить своё богатство можно этой командой:
 
 echo \$I
 
@@ -32,7 +32,7 @@ EOF
     mv ../.vault ../vault 2>/dev/null
     mv ../.scrap ../scrap 2>/dev/null
 else
-    echo "This treasure has already been taken."
+    echo "Это сокровище уже забрано."
 fi
 
 
@@ -308,8 +308,8 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Try moving into the armoury, maybe you
-# can come back to this treasure later!
+# Хм, это не сработало.
+# Попробуйте перейти в оружейную, может быть,
+# вы сможете вернуться к этому сокровищу позже!
 
 

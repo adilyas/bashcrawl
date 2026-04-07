@@ -1,21 +1,21 @@
 
-# You can interact with items in the room (they end with a *)
-# by running them as a command (a shell script).
+# Вы можете взаимодействовать с предметами в комнате (они заканчиваются на *)
+# запуская их как команду (шелл-скрипт).
 #
-# For example, to collect treasure:
+# Например, чтобы подобрать сокровище:
 #
 # ./treasure
 #
-# The . (dot) means *don't move*, and the name of the 
-# script makes the code run.  This is known as a 
-# relative path, and the . means the current room
-# (directory).
+# Точка . означает *не перемещаться*, а имя
+# скрипта запускает код. Это называется
+# относительный путь, и . означает текущую комнату
+# (директорию).
 #
-# You may have left treasure in the previous room.
-# Go back to a previous directory with two dots,
-# which means *take a step back*.
+# Возможно, вы оставили сокровище в предыдущей комнате.
+# Вернуться в предыдущую директорию можно двумя точками,
+# что означает *сделать шаг назад*.
 #
-# EXAMPLE:
+# ПРИМЕР:
 #
 # cd ..
 

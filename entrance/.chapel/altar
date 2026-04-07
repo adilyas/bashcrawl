@@ -1,34 +1,33 @@
 #!/usr/bin/env bash
+# Если вы это читаете, значит вы вышли за пределы игры
+# и читаете код, который управляет игрой.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Поздравляем!
 #
-#                    Congratulations!
+# Изучение Linux — это прежде всего любопытство, так что
+# читайте этот код и попробуйте понять, что он делает.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
-#
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Когда будете готовы продолжить игру, возвращайтесь
+# к свиткам. Если застряли — создайте issue на Gitlab.
+# Мы с радостью дадим подсказку.
 #
 
 ITEM=trinket
 
 function askPutBackOnAltar() {
-    echo "Do you want to put the trinket back on the altar? y/n  "
+    echo "Хотите положить безделушку обратно на алтарь? y/n  "
     read RESP
     return $([ "$RESP" = "y" -o "$RESP" = "Y" ])
 }
 
 function askPutInInventory() {
-    echo "Do you want to take the trinket for yourself? y/n  "
+    echo "Хотите забрать безделушку себе? y/n  "
     read RESP
     return $([ "$RESP" = "y" -o "$RESP" = "Y" ])
 }
 
 function askPutBackOnGround() {
-    echo "Do you want to put the trinket back on the ground ?"
+    echo "Хотите положить безделушку обратно на пол?"
     echo "y/n  "
     read RESP
     return $([ "$RESP" = "y" -o "$RESP" = "Y" ])
@@ -36,23 +35,23 @@ function askPutBackOnGround() {
 
 function putOnAltar() {
     cat << EOF
-You place the trinket upon the altar.  You feel a gentle
-breeze pass through the room.
+Вы кладёте безделушку на алтарь. Вы чувствуете, как
+лёгкий ветерок проносится по комнате.
 
 EOF
     touch .bless
 }
 
 function putInInventory() {
-    echo "Remember to add the trinket to your inventory!"
+    echo "Не забудьте добавить безделушку в инвентарь!"
     echo ""
     touch .curse
 }
 
 function leaveOnGround() {
     cat << EOF
-You leave the trinket where it lies.  There is a great
-sadness here.  You feel compelled to move on.
+Вы оставляете безделушку там, где она лежит. Здесь царит
+великая печаль. Вы чувствуете, что нужно идти дальше.
 
 EOF
     touch .curse
@@ -60,14 +59,14 @@ EOF
 
 function remindRemoveInventory() {
     cat << EOF
-Don't forget to remove the trinket from your inventory.  Try
-the following command:
+Не забудьте убрать безделушку из инвентаря. Попробуйте
+следующую команду:
 
 export I=$(sed "s/$ITEM,//" <<< "$I")
 EOF
 }
 
-echo "In the corner is a decaying old altar of some forgotten god."
+echo "В углу стоит ветхий старый алтарь какого-то забытого бога."
 
 if grep --quiet "$ITEM" <<< "$I" ; then
     if askPutBackOnAltar ; then
@@ -78,7 +77,7 @@ if grep --quiet "$ITEM" <<< "$I" ; then
         leaveOnGround
         remindRemoveInventory
     else
-        echo -e "You keep the trinket in your inventory\n"
+        echo -e "Вы оставляете безделушку в инвентаре\n"
     fi
 elif [ -f .bless ]; then
     if askPutInInventory ; then
@@ -88,7 +87,7 @@ elif [ -f .bless ]; then
         leaveOnGround
         rm .bless
     else
-        echo -e "You leave the trinket on the altar\n"
+        echo -e "Вы оставляете безделушку на алтаре\n"
     fi
 elif [ -f .curse ]; then
     if askPutBackOnAltar ; then
@@ -101,8 +100,8 @@ elif [ -f .curse ]; then
     fi
 else
     cat << EOF
-There is a small trinket on the ground.  It looks religious
-in nature.
+На полу лежит маленькая безделушка. Она выглядит
+религиозной по своей природе.
 
 EOF
     if askPutBackOnAltar ; then
@@ -383,16 +382,325 @@ fi
 
 
 
-# Hmm, that didn't work.
-#
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Хм, это не сработало.
+# Помните, файлы со * — это программы.
+# Попробуйте так:
 #
 # ./altar
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Если вы не видите * после
+# имени этого файла, вероятно, вы
+# забыли использовать ls -F
+
 
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if [ $USER != "jovyan" ]; then
-    echo This script is for configuration of mybinder.org sessions
-    echo It should not be used otherwise
+    echo Этот скрипт предназначен для настройки сессий mybinder.org
+    echo Его не следует использовать в других целях
     exit 0
 fi
 
