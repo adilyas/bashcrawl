@@ -60,7 +60,7 @@ EOF
 #!/usr/bin/env bash
 if ! grep  --quiet --only-matching crown <<< \$I; then
     cat << eof
-Вы нашли **корону**! Добавьте её в инвентарь.
+Вы нашли **crown** (корону)! Добавьте её в инвентарь.
 
 eof
 

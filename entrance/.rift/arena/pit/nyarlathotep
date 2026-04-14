@@ -80,7 +80,7 @@ EOF
 #!/usr/bin/env bash
 if ! grep  --quiet --only-matching hair <<< \$I; then
     cat << eof
-Вы нашли прядь **волос** бога! Добавьте её в инвентарь.
+Вы нашли прядь **hair** (волос) бога! Добавьте её в инвентарь.
 
 eof
 else
@@ -93,7 +93,7 @@ EOF
 #!/usr/bin/env bash
 if ! grep  --quiet --only-matching bracelet <<< \$I; then
     cat << eof
-Вы нашли зачарованный *браслет* хаотической
+Вы нашли зачарованный **bracelet** (браслет) хаотической
 некромантии! Добавьте его в инвентарь.
 
 eof
