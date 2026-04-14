@@ -4,7 +4,7 @@
 
 ## Скачивание и распаковка
 
-Если вы ещё не скачали Bashcrawl, перейдите на https://gitlab.com/slackermedia/bashcrawl/-/releases и скачайте файл `Source code (zip)`.
+Если вы ещё не скачали Bashcrawl, перейдите на https://github.com/adilyas/bashcrawl/releases/tag/stable и скачайте файл `Source code (zip)`.
 
 После того как ZIP-файл загрузится на ваш компьютер, распакуйте его как обычно.
 
@@ -46,16 +46,6 @@ cat scroll
 ## Перезапуск игры
 
 Если вы хотите начать заново, проще всего удалить папку `bashcrawl` и распаковать свежую копию.
-
-## Попробуйте онлайн с mybinder
-
-- Перейдите по ссылке: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/slackermedia%2Fbashcrawl/HEAD).
-- Подождите от нескольких секунд до минуты, пока не появится панель запуска.
-- Нажмите на значок Terminal.
-
-Примечание: сессии mybinder временные; игра заново инициализируется при каждом
-отключении.
-[Узнайте больше о сервисе mybinder](https://mybinder.readthedocs.io/en/latest/).
 
 ## ЗАМЕЧАНИЯ ДЛЯ macOS X
 
