@@ -66,7 +66,7 @@ export I=$(sed "s/$ITEM,//" <<< "$I")
 EOF
 }
 
-echo "В углу стоит ветхий старый алтарь какого-то забытого бога."
+echo "В углу стоит ветхий старый алтарь какого-то забытого идола."
 
 if grep --quiet "$ITEM" <<< "$I" ; then
     if askPutBackOnAltar ; then
